@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    android:layout_alignParentBottom="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".MyProfile.MainMyProfileFragment">
+    <FrameLayout
+
+        android:id="@+id/container_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+     >
+
+    </FrameLayout>
+
+<!--<LinearLayout-->
+
+    <!--android:id="@+id/fragment_main"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/linearLayout_menu"-->
+    <!--android:layout_alignParentTop="true">-->
+
+    <!--<fragment-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="412dp"-->
+        <!--android:name="com.example.ilyab.section_4_my_profie_main_menu.MyProfileFragment7_1"-->
+        <!--tools:layout="@layout/myprofile_7_1"-->
+        <!--android:id="@+id/fragment"/>-->
+
+<!--</LinearLayout>-->
+
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_below="@id/fragment_main"-->
+        <!--android:layout_marginTop="5dp"-->
+   <!--android:layout_marginBottom="30dp"-->
+        <!--android:id="@+id/fragment_list_user_info"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<fragment-->
+            <!--android:name="com.example.ilyab.section_4_my_profie_main_menu.MyProfileFragment7_1_info"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+
+            <!--tools:layout="@layout/myprofile_7_1_info">-->
+
+
+        <!--</fragment>-->
+    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/linearLayout_menu">
+
+        <ImageButton
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            android:id="@+id/three_dots_5"
+            android:src="@drawable/ic_three_dots"
+            android:background="#171414"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+
+            android:id="@+id/my_profile_4"
+            android:src="@drawable/ic_profile_4"
+            android:background="#171414"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+
+            android:id="@+id/weight_3"
+            android:src="@drawable/ic_weight_3"
+            android:background="#171414"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+
+            android:id="@+id/programm_2_training"
+            android:src="@drawable/ic_action_name"
+            android:background="#171414"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+
+            android:id="@+id/news_feed"
+            android:src="@drawable/ic_1_news_feed"
+            android:background="#171414"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

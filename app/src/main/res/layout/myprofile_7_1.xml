@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_below="@+id/layout_container"
+        android:orientation="horizontal"
+        android:id="@+id/checkbox_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RadioGroup
+         android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+         android:id="@+id/checkbox_gender_group"
+           >
+
+            <RadioButton
+                android:layout_weight="1"
+                android:id="@+id/boy_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="?android:attr/listChoiceIndicatorMultiple"
+                android:text="Man" />
+
+            <RadioButton
+                android:layout_weight="1"
+                android:id="@+id/girl_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="?android:attr/listChoiceIndicatorMultiple"
+                android:text="Girl" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_container_abonement_and_contact"
+        android:layout_below="@id/checkbox_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:id="@+id/layout_container_start_abonement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:text="Start of abonement:"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/start_of_user_abonement"
+                android:layout_weight="1"
+                android:hint="00:00:0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:id="@+id/layout_container_end_abonement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:text="End of abonement:"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/end_of_user_abonement"
+                android:layout_weight="1"
+                android:hint="00:00:0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+   <LinearLayout
+       android:id="@+id/layout_container_contact"
+       android:layout_below="@id/layout_container_abonement_and_contact"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+   </LinearLayout>
+
+    <TextView
+        android:textColor="#a2a2a2"
+        android:text="Users parametres:"
+        android:textSize="15sp"
+        android:layout_margin="8dp"
+        android:id="@+id/layout_container_users_information"
+        android:layout_below="@id/layout_container_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout">
+
+</LinearLayout>
+    <ListView
+        android:id="@+id/my_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_container_users_information">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/layout_container"
+        android:background="#f0ecec"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp">
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/users_login"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:hint="Your Login"
+        android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="16sp"
+            android:id="@+id/users_coach"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:hint="Your coach"
+            android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:id="@+id/users_aim"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Your goal:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Spinner
+                    android:layout_weight="1"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbarSize="11sp"
+                    android:id="@+id/users_goal_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </Spinner>
+
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+
+                android:layout_gravity="center"
+                android:id="@+id/users_avatar_boy"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_boy_avatar_my_profile"/>
+            <ImageView
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:id="@+id/users_avatar_girl"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_girl_avatar_girl_profile"/>
+            <TextView
+                android:textSize="16sp"
+               android:layout_gravity="center"
+                android:id="@+id/users_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

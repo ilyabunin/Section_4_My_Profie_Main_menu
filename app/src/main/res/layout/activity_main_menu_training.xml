@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    android:layout_alignParentBottom="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".Training_pckg.workout_by_coach.MyWorkOut_No_Coach_fragment_1">
+
+    <FrameLayout
+        android:background="#fadcdc"
+        android:id="@+id/container_main_training"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/vip_layout">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:background="#ffffff"
+        android:weightSum="2"
+        android:id="@+id/vip_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:text="Want more? Become VIP:"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="80dp"
+                android:background="#fff"
+                android:src="@drawable/ic_diamond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vip_button_start"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+           android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:fontFamily="sans-serif-light"
+                android:textSize="16sp"
+                android:id="@+id/users_login"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:hint="Your Login"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:fontFamily="sans-serif-light"
+                android:textSize="16sp"
+                android:id="@+id/users_coach"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:hint="Your coach"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:fontFamily="sans-serif-light"
+                android:textSize="16sp"
+                android:id="@+id/users_status"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:hint="Your status"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+<LinearLayout
+    android:gravity="center_vertical"
+    android:layout_below="@+id/vip_layout"
+    android:id="@+id/layout_navigation_training"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<Button
+    android:id="@+id/btn_coach_trainings"
+    android:text="workout by your coach"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    <Button
+        android:text="Standart workout"
+        android:id="@+id/btn_prepared_trainings"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="My personal workout"
+        android:id="@+id/btn_personal_trainings"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+
+</RelativeLayout>

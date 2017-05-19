@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+                android:background="#141314"
+                android:orientation="vertical">
+    <ImageView
+        android:src="@drawable/ic_notebook"
+        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/vip_adv_img_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_below="@id/vip_adv_img_1"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#ffffff"
+        android:id="@+id/vip_adv_title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/vip_adv_4_title"
+        android:textSize="20sp" />
+    <TextView
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_below="@id/vip_adv_title_1"
+        android:textColor="#ffffff"
+        android:id="@+id/vip_adv_content_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/vip_adv_4_content"
+        android:textSize="14sp" />
+
+    <Button
+        android:background="#a4a724"
+        android:id="@+id/vip_btn"
+        android:textColorHighlight="#f45454"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:shadowColor="#a4a724"
+        android:text="BECOME VIP"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/vip_adv_content_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:foregroundGravity="right"
+        android:background="#141314"
+        android:src="@drawable/ic_action_close_vip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/vip_adv_content_1"
+        android:layout_alignEnd="@+id/vip_adv_content_1"
+        android:layout_marginTop="13dp"
+        android:id="@+id/close_vip_button"/>
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<resources>
+    <string name="section_4_profile">My Profile</string>
+    <string name="app_name">Section_4_My_Profie_Main_menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_search">Search...</string>
+    <string-array name="users_params">
+        <item>Height</item>
+        <item>Weight</item>
+        <item>Neck</item>
+        <item>Chest</item>
+        <item>Waist</item>
+        <item>Hips</item>
+        <item>Left biceps</item>
+        <item>Right biceps</item>
+        <item>Left hip</item>
+        <item>Right hip</item>
+        <item>Left calf</item>
+        <item>Right calf</item>
+
+    </string-array>
+    <string-array name="coaches_name">
+        <item>Gosha Trenerkov</item>
+        <item>Crazy Vasya</item>
+        <item>Ivan Bunin</item>
+        <item>George Biver</item>
+        <item>Captain America</item>
+        <item>Shloma Hebrow</item>
+        <item>Boris Britva</item>
+        <item>Rahat Lukum Habib</item>
+
+    </string-array>
+    <string-array name="degree">
+        <item>coach</item>
+        <item>coach</item>
+        <item>coach</item>
+        <item>rookie coach</item>
+        <item>coach</item>
+        <item>rookie coach</item>
+        <item>master coach</item>
+        <item>guru coach</item>
+    </string-array>
+    <string-array name="specialization">
+        <item>muscle mass</item>
+        <item>all spheres</item>
+        <item>muscle mass</item>
+        <item>weight loss</item>
+        <item>muscle mass</item>
+        <item>bodybuilding</item>
+        <item>diet and nutrition</item>
+        <item>health improvement</item>
+    </string-array>
+    <string-array name="info">
+        <item>Once upon a time great warrior become to this world and start to work in this awesome GYM</item>
+        <item>Crazy Vasya in da house</item>
+        <item>Once upon a time great warrior become to this world and start to work in this awesome GYM</item>
+        <item>That Gets You Hired. An about page have to be anxiety-inducing. Keep it simple and put your inner-critic aside.</item>
+        <item>That Gets You Hired. An about page  have to be anxiety-inducing. Keep it simple and put your inner-critic aside.</item>
+        <item>That Gets You Hired. An about page  have to be anxiety-inducing. Keep it simple and put your inner-critic aside.</item>
+        <item>That Gets You Hired. An about page  have to be anxiety-inducing. Keep it simple and put your inner-critic aside.</item>
+        <item>That Gets You Hired. An about page  have to be anxiety-inducing. Keep it simple and put your inner-critic aside.</item>
+    </string-array>
+    <string name="vip_adv_1_title">Exclusive exercises</string>
+    <string name="vip_adv_1_content">Want to achieve more? Have you got some troubles with  breathing, posture or anything else?
+        Receive access to the most effective and exclusive exercise
+        which made by our coach especially for your needs in our VIP plan.  </string>
+    <string name="vip_adv_2_title">Full support</string>
+    <string name="vip_adv_2_content"> Keep on touch with your coach every time you need.
+        Our VIP clients get support on each step in gaining sports achievements: individual trainings and advices, real chat with coach, supply with PN and diet </string>
+    <string name="vip_adv_3_title">Additional Discount</string>
+    <string name="vip_adv_3_content">We will provide you exclusive discounts on sport nutrition and training equipment in our GYM  </string>
+    <string name="vip_adv_4_title">Custom book with recommendations</string>
+    <string name="vip_adv_4_content">We present you exclusive and limited book-instruction which contains rich long and diverse experience in sport by founder and main coach   </string>
+    <string name="work_out_no_coach_1"> It is so sad but you do not have any personal workout and even coach who can make it for you...If you want to start training more effective just choose coach and asked him to create your workout plan right now!  </string>
+
+    <string name="my_profile_7_1_menu_password">Password</string>
+    <string name="my_profile_7_1_menu_references">References</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

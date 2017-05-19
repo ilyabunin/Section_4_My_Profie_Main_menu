@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+                android:background="#2C3E50"
+                android:orientation="vertical">
+    <ImageView
+        android:src="@drawable/ic_discount"
+        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/vip_adv_img_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <TextView
+        android:gravity="center"
+        android:layout_below="@id/vip_adv_img_1"
+ android:fontFamily="sans-serif-light"
+        android:textColor="#ffffff"
+        android:id="@+id/vip_adv_title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/vip_adv_3_title"
+        android:textSize="20sp" />
+    <TextView
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_below="@id/vip_adv_title_1"
+        android:textColor="#ffffff"
+        android:id="@+id/vip_adv_content_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/vip_adv_3_content"
+        android:textSize="14sp" />
+    
+</RelativeLayout>

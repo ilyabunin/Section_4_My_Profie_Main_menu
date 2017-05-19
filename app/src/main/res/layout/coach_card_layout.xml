@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:id="@+id/card_view_coach_layout"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_marginTop="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/text_info_coach_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:hint="Имя"
+            android:id="@+id/coachName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="sans-serif-light"
+            android:textSize="18sp">
+        </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-light"
+                android:hint="Degree: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp">
+            </TextView>
+
+
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/coachDegree"
+            android:hint="Должность"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+        </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:text="Specialization: "
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginRight="10dp"
+                >
+            </TextView>
+        <TextView
+
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/coachSpecialization"
+            android:hint="Должность"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            >
+        </TextView>
+       </LinearLayout>
+        <TextView
+
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/coachAboutInfo"
+            android:visibility="gone"
+            android:hint="Персональная информация"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            >
+        </TextView>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:id="@+id/coachImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher">
+    </ImageView>
+
+
+
+</LinearLayout>
+
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>
+</LinearLayout>

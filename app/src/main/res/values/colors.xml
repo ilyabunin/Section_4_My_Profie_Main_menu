@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="feed_bg">#d3d6db</color>
+    <color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#0a80d1</color>
+    <color name="timestamp">#a0a3a7</color>
+    <color name="colorPrimary">#E55C57</color>
+    <color name="colorPrimaryDark">#2a2525</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="genre">#666666</color>
+    <color name="year">#888888</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+        <color name="random1" type ="color">#F8b195</color>
+        <color name="random2" type ="color">#F67280</color>
+        <color name="random3" type ="color">#c06c84</color>
+        <color name="random4" type ="color">#6c5b7b</color>
+        <color name="random5" type ="color">#355c7d</color>
+        <color name="random6" type ="color">#3eacab</color>
+
+    <integer-array name="random_colors">
+        <item>@color/random1</item>
+        <item>@color/random2</item>
+        <item>@color/random3</item>
+        <item>@color/random4</item>
+        <item>@color/random5</item>
+        <item>@color/random6</item>
+
+    </integer-array>
+
+</resources>
