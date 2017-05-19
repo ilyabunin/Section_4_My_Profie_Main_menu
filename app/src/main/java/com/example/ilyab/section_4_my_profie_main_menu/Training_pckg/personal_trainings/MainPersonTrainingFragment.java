@@ -178,7 +178,7 @@ public class MainPersonTrainingFragment extends Fragment implements View.OnClick
                 } }
                     else {
 
-
+//
                     personal_trainings.set(edit_position,et_personal_trainings.getText().toString());
                     adapter.notifyDataSetChanged();
                     dialog.dismiss();
