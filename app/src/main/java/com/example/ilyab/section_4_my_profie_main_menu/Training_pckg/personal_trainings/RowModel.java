@@ -1,5 +1,7 @@
 package com.example.ilyab.section_4_my_profie_main_menu.Training_pckg.personal_trainings;
 
+import com.google.gson.Gson;
+
 import java.util.Date;
 
 public class RowModel {
@@ -12,7 +14,7 @@ public class RowModel {
         this.id = String.valueOf((new Date()).getTime());
     }
 
-    private RowModel() {
+    public RowModel() {
     }
 
     public String getDescription() {
@@ -56,10 +58,12 @@ public class RowModel {
     public static RowModel newInstance(String id, String data) {
         RowModel rowModel = new RowModel();
         rowModel.setId(id);
-        String[] arr = data.split(";");
-        rowModel.setMainText(arr[0]);
-        rowModel.setSubText(arr.length > 1 ? arr[1] : "");
-        rowModel.setDescription(arr.length > 2 ? arr[2] : "");
+        Gson gson = new Gson();
+        RowModel model = gson.fromJson(data,RowModel.class);
+//        String[] arr = data.split(";");
+        rowModel.setMainText(model.getMainText());
+        rowModel.setSubText(model.getSubText());
+        rowModel.setDescription(model.getDescription());
         return rowModel;
     }
 }

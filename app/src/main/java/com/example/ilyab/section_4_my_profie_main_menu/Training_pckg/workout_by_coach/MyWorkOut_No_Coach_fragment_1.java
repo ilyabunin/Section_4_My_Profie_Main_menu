@@ -42,7 +42,7 @@ public class MyWorkOut_No_Coach_fragment_1 extends Fragment {
                 android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container_main, newFragment);
                 fragmentTransaction.addToBackStack("REPLACE_TO_PROFILE");
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.commit();
 
 
             }

@@ -19,8 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ilyab.section_4_my_profie_main_menu.R;
+import com.google.gson.Gson;
 import com.nikhilpanju.recyclerviewenhanced.OnActivityTouchListener;
 import com.nikhilpanju.recyclerviewenhanced.RecyclerTouchListener;
 
@@ -50,11 +52,17 @@ public class MainPersonTrainFragment_recycler_v_edit extends Fragment implements
     private OnActivityTouchListener touchListener;
     private RecyclerTouchListener onTouchListener;
     private Paint p = new Paint();
+private AddToWorkOut listenertoWorkOut;
+
+
+    public void setListenertoWorkOut(AddToWorkOut listenertoWorkOut) {
+        this.listenertoWorkOut = listenertoWorkOut;
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+setListenertoWorkOut((AddToWorkOut) getActivity());
         SharedPreferences trainings = PreferenceManager.getDefaultSharedPreferences(getActivity());
         View view = inflater.inflate(R.layout.workout_personal_trainings, container, false);
         return view;
@@ -85,7 +93,6 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
         mAdapter = new MainAdapter(getActivity(), getData());
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         onTouchListener = new RecyclerTouchListener(getActivity(), mRecyclerView);
         onTouchListener
                 .setIndependentViews(R.id.rowButton)
@@ -94,6 +101,12 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
                     @Override
                     public void onRowClicked(int position) {
                         ToastUtil.makeToast(getActivity().getApplicationContext(), "Row " + getId() + " clicked!");
+                        FragmentManager fragmentManager = getFragmentManager();
+                        Fragment fragment = getFragmentManager().findFragmentById(R.id.container_main);
+                        RowModel rowModel =  mAdapter.modelList.get(position);
+                        fragment = PersonalTrainingExercises.newInstance(rowModel.getId());
+                        fragmentManager.beginTransaction().replace(R.id.container_main, fragment, "FRAG_MODEL_LIST").addToBackStack("REPLACE_TO_PROFILE").commit();
+
                         Log.d("MY_TAG", "onRowClicked: " + mAdapter.getItem(position).getId());
 //                        (position + 1)
                     }
@@ -103,8 +116,8 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
                         ToastUtil.makeToast(getActivity().getApplicationContext(), "Button in row " + (position + 1) + " clicked!");
                         FragmentManager fragmentManager = getFragmentManager();
                         Fragment fragment = getFragmentManager().findFragmentById(R.id.container_main);
-                        RowModel rowModel = mAdapter.modelList.get(position);
-                        fragment = PersonalTrainigCardFragment.newInstance(rowModel.getMainText());
+                        RowModel rowModel =  mAdapter.modelList.get(position);
+                        fragment = PersonalTrainigCardFragment.newInstance(rowModel.getId());
                         fragmentManager.beginTransaction().replace(R.id.container_main, fragment).addToBackStack("REPLACE_TO_PROFILE").commit();
 
                     }
@@ -121,7 +134,8 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
                     public void onSwipeOptionClicked(int viewID, final int position) {
                         String message = "";
                         if (viewID == R.id.add) {
-
+                addIdRow(position);
+addExercises(position);
                             message += "Add Exercises";
                         } else if (viewID == R.id.edit) {
                             alertDialog = new AlertDialog.Builder(getActivity());
@@ -137,13 +151,40 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
                             alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+// if (et_personal_trainings_name.length() < 1|| et_personal_trainings_description.length() >1){
+//                                        String et_description = et_personal_trainings_description.getText().toString();
+//                                        RowModel model = mAdapter.getItem(position);
+//                                        model.setSubText(et_description);
+////                                        SharedPreferences sPref = getActivity().getSharedPreferences("TRAINING", Context.MODE_PRIVATE);
+////                                        SharedPreferences.Editor editor = sPref.edit();
+////                                        editor.putString(model.getId(),model.toString());
+////                                        editor.commit();
+//                                        rowModelToJsonSave(model);
+//                                        mAdapter.notifyItemChanged(position);
+//                                        dialog.dismiss();
+//                                    }
+//
+//                                   else if (et_personal_trainings_name.length() > 1|| et_personal_trainings_description.length() <1){
+//     String et_name = et_personal_trainings_name.getText().toString();
+//                                        RowModel model = mAdapter.getItem(position);
+//                                        model.setMainText(et_name);
+////                                        SharedPreferences sPref = getActivity().getSharedPreferences("TRAINING", Context.MODE_PRIVATE);
+////                                        SharedPreferences.Editor editor = sPref.edit();
+////                                        editor.putString(model.getId(),model.toString());
+////                                        editor.commit();
+//                                        rowModelToJsonSave(model);
+//                                        mAdapter.notifyItemChanged(position);
+//                                        dialog.dismiss();
+//                                    }
+//
 
-                                    if (et_personal_trainings_name.length() < 1) {
+
+    if (et_personal_trainings_name.length() < 1|| et_personal_trainings_description.length() <1) {
                                         ToastUtil.makeToast(getActivity().getApplicationContext(), "Type minimum 1 Symbol");
 
                                         return;
-
                                     }
+
 
                                     else if (et_personal_trainings_name.length() > 30){
                                         ToastUtil.makeToast(getActivity().getApplicationContext(), "Maximum size of name is 30 symbols");
@@ -158,10 +199,11 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
                                         RowModel model = mAdapter.getItem(position);
                                         model.setMainText(et_name);
                                         model.setSubText(et_description);
-                                        SharedPreferences sPref = getActivity().getSharedPreferences("TRAINING", Context.MODE_PRIVATE);
-                                        SharedPreferences.Editor editor = sPref.edit();
-                                        editor.putString(model.getId(),model.toString());
-                                        editor.commit();
+//                                        SharedPreferences sPref = getActivity().getSharedPreferences("TRAINING", Context.MODE_PRIVATE);
+//                                        SharedPreferences.Editor editor = sPref.edit();
+//                                        editor.putString(model.getId(),model.toString());
+//                                        editor.commit();
+                                            rowModelToJsonSave(model);
                                         mAdapter.notifyItemChanged(position);
                                         dialog.dismiss();
 
@@ -202,7 +244,11 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
         Map<String, ?> allTraining = sPref.getAll();
 
         for (Map.Entry entry : allTraining.entrySet()) {
+//            Gson gson = new Gson();
+//            RowModel model = gson.fromJson(String.valueOf(entry.getValue()),RowModel.class);
+//            Log.d("TAG", "getData: model" + " " + model.toString());
             RowModel rowModel = RowModel.newInstance(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));
+
             list.add(rowModel);
 
         }
@@ -258,6 +304,8 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
             return modelList.get(position);
         }
 
+        public void notifyItemChanged(RowModel id) {
+        }
 
 
         class MainViewHolder extends RecyclerView.ViewHolder {
@@ -280,7 +328,6 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
         }
     }
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -291,11 +338,12 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
                     RowModel rowModel = new RowModel("My personal training " + (mAdapter.modelList.size() + 1), "Note... ","");
                     mAdapter.modelList.add(rowModel);
                     mAdapter.notifyDataSetChanged();
-                    SharedPreferences sPref = getActivity().getSharedPreferences("TRAINING", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sPref.edit();
-                    editor.putString(rowModel.getId(), rowModel.toString());
-                    editor.commit();
+//                    SharedPreferences sPref = getActivity().getSharedPreferences("TRAINING", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sPref.edit();
+//                    editor.putString(rowModel.getId(), rowModel.toString());
+//                    editor.commit();
 
+                    rowModelToJsonSave(rowModel);
 
 
                     break;
@@ -307,6 +355,30 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
         }
     }
 
+
+
+    public void addExercises(int position){
+        RowModel rowModel =  mAdapter.modelList.get(position);
+        String id = rowModel.getId();
+        listenertoWorkOut.addtoWorkout();
+
+    }
+
+    public void addIdRow(int position){
+        RowModel rowModel =  mAdapter.modelList.get(position);
+        String id_row = rowModel.getId();
+        //Вытащил айди ровмодели
+       Toast.makeText(getActivity(), "ID : " +rowModel.getId(), Toast.LENGTH_SHORT).show();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("ID_OF_ROW",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("ID_VALUE",id_row);
+        editor.commit();
+
+//        Bundle bundle = new Bundle();
+//        bundle.putString("ID_ROW", id);
+//        setArguments(bundle);
+
+    }
     public void removeItem(int position) {
 
 //        mAdapter.modelList.remove(position);
@@ -364,6 +436,22 @@ no_training = (TextView) getActivity().findViewById(R.id.txt_personal_trainings_
 //    }
     }
 
+
+    private void rowModelToJsonSave(RowModel rowModel){
+
+        Gson gson = new Gson();
+        String model = gson.toJson(rowModel,RowModel.class);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("TRAINING",getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(rowModel.getId(),model);
+        editor.commit();
+
+    }
+    public interface AddToWorkOut{
+
+        void addtoWorkout();
+
+    }
 
 }
 

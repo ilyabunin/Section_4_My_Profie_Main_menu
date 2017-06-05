@@ -23,6 +23,14 @@
         <color name="random5" type ="color">#355c7d</color>
         <color name="random6" type ="color">#3eacab</color>
 
+    <color name="black">#000000</color>
+    <color name="dark_grey">#484547</color>
+
+    <color name="app_background_color">#FAFAFA</color>
+    <color name="divider_color">#C7C7CC</color>
+
+    <color name="item_selected_background_color">#C7C7CC</color>
+    <color name="image_placeholder_background_color">#C7C7CC</color>
     <integer-array name="random_colors">
         <item>@color/random1</item>
         <item>@color/random2</item>

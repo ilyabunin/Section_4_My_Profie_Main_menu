@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
@@ -48,23 +49,55 @@
         android:layout_height="wrap_content"/>
 
 </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:weightSum="3"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<Button-->
+            <!--android:layout_margin="20dp"-->
+            <!--android:id="@+id/btn_edit_training_description"-->
+            <!--android:hint="EDIT"-->
+            <!--android:background="#be5bd4"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<Button-->
+            <!--android:visibility="visible"-->
+            <!--android:id="@+id/btn_save_training_description"-->
+            <!--android:layout_margin="20dp"-->
+            <!--android:hint="SAVE"-->
+            <!--android:background="#5ecc6d"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<Button-->
+            <!--android:visibility="visible"-->
+            <!--android:id="@+id/btn_cancel_training_description"-->
+            <!--android:layout_margin="20dp"-->
+            <!--android:hint="CANCEL"-->
+            <!--android:background="#ed4f81"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
         android:layout_gravity="center"
         android:id="@+id/personal_training_description"
         android:gravity="center"
         android:textSize="20sp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:hint="Description:"
         android:layout_height="wrap_content"/>
-    <FrameLayout
-
-        android:background="@color/random6"
-        android:id="@+id/frame_preview_personal_training"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    </LinearLayout>
        <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="match_parent"
+           android:layout_height="198dp"
            android:orientation="horizontal">
         <EditText
             android:visibility="gone"
@@ -85,45 +118,30 @@
             android:layout_height="match_parent"/>
 
        </LinearLayout>
-        <LinearLayout
-            android:weightSum="3"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:layout_margin="20dp"
-                android:id="@+id/btn_edit_training_description"
-                android:hint="EDIT"
-                android:background="#be5bd4"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-            android:visibility="visible"
-            android:id="@+id/btn_save_training_description"
-            android:layout_margin="20dp"
-            android:hint="SAVE"
-            android:background="#5ecc6d"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-            <Button
-                android:visibility="visible"
-                android:id="@+id/btn_cancel_training_description"
-                android:layout_margin="20dp"
-                android:hint="CANCEL"
-                android:background="#ed4f81"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<LinearLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_gravity="right"
+    android:gravity="right"
+    android:layout_height="match_parent">
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_fl_edit_training_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:backgroundTint="@color/random4"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_edit_white" />
 
-        </LinearLayout>
-    </FrameLayout>
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_fl_save_training_description"
+     android:visibility="gone"
+     app:backgroundTint="#11b859"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_action_save" />
+</LinearLayout>
 </LinearLayout>
